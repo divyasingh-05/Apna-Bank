@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking System:Transfer</title>
+    <style>
+        #first{background-color: #FFEE63;}
+        #in{background-color:#FCF8E8;padding:10px;border:1px solid #E15FED;}
+        #head{color:#990000; text-align:center;}
+    </style>
+</head>
+<body id="first">
+<h1 id="head">Transfer form</h1>
+    {% block content %}
+    <form action="{% url 'transfer-complete' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="name" value="{{costm.name}}"readonly id="in">
+            <br>
+        </div>
+        <div>
+
+            <select name="reciver" id="in">
+                <option>Select customer to transfer</option>
+                {% for data in recivers %}
+                <option value="{{data.name}}">{{data.name}}</option>
+                {% endfor %}
+
+            </select>
+            <br>
+        </div>
+        <div>
+
+            <input type="number" placeholder="Amount to transfer" name="balance" id="in">
+            <br>
+        </div>
+        <div>
+            <input type="submit" value="Transfer" id="in">
+        </div>
+    </form>
+    {% endblock %}
+</body>
+</html>

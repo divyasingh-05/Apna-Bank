@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking System:Customers details</title>
+    <style>
+        #head{color:#990000}
+        #first{background-color:#FFEE63}
+        .tab,tr,td,th{border:1px solid #E15FED;border-collapse:collapse;padding:10px;background-color:#FCF8E8}
+        #link{text-decoration:none}
+    </style>
+</head>
+<body id="first">
+{% block content %}
+<h1 id="head">Please click the name of any customer for go to transfer page.</h1>
+<table class="tab">
+    <tr>
+        <th>Name</th>
+        <th>Account No.</th>
+        <th>E-mail</th>
+        <th>Mobile</th>
+        <th>Balance</th>
+    </tr>
+{% for data in datas %}
+    <tr>
+
+        <td> <a href = "{% url 'transfer' id=data.id %}" id="link">{{data.name}}</a></td>
+            <td>{{data.account_no}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.balance}}</td>
+    </tr>
+
+  {% endfor %}
+</table>
+{% endblock %}
+</body>
+</html>
