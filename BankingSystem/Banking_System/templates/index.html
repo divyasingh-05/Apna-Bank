@@ -5,15 +5,15 @@
     <title>Banking System:Home</title>
     <style>
     #heading{text-align: center;color:#711A75;font-size:50px;}
-    #first{background-color:#FFEE63}
-    #para{text-align:center;color:#1363DF;font-size:20px;}
-    #link{border:1px solid blue; background-color:#DFF6FF;text-decoration:none;padding:10px;color:#A149FA;border-radius:10px;}
+    #first{background-image:url(/media/backg.jpg);background-size:100% 400%;background-repeat:no-repeat;}
+    #para{text-align:center;color:pink;font-size:20px;}
+    #link{border:1px solid blue; background-color:#DFF6FF;text-decoration:none;padding:10px;color:#A149FA;border-radius:10px;position:absolute;top:300px;left:50%;}
     </style>
 </head>
 <body id="first">
-   <!--<img src="{{ MEDIA_URL }}/backg.jpg">-->
     <h1 id="heading">APNA BANK</h1>
     <p id="para">Welcome to Apna Bank</p>
+
     <a href="{% url 'customers' %}" id="link">View Customers</a>
 </body>
 </html>
